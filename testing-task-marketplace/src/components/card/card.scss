@@ -1,0 +1,34 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #6b6b6b;
+  border-radius: 8px;
+  background-color: white;
+  width: 200px;
+  height: 320px;
+  padding: 12px;
+  color: #6b6b6b;
+  gap: 12px;
+
+  &__img {
+    width: 100%;
+    height: auto;
+  }
+
+  &__name {
+    color: black;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__cost {
+  }
+
+  &__icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

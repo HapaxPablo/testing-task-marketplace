@@ -1,9 +1,9 @@
 {
   "dependencies": {
-    "json-server": "^1.0.0-beta.1"
+    "json-server": "^1.0.0-beta.3"
   },
   "scripts": {
-    "server": "json-server --watch db.json",
+    "server": "json-server --watch db.json --port 8000",
     "dev": "yarn --cwd ./testing-task-marketplace dev"
   },
   "engines": {
