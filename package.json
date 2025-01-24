@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "json-server": "^1.0.0-beta.1"
+  },
+  "scripts": {
+    "server": "json-server --watch db.json",
+    "start-testing-task": "yarn --cwd ./testing-task-marketplace dev"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
