@@ -8,7 +8,7 @@ COPY ./testing-task-marketplace/package.json ./testing-task-marketplace/yarn.loc
 RUN yarn --cwd ./testing-task-marketplace install
 
 # Копируем код приложения и собираем
-COPY ./testing-task-marketplace ./testing-task-marketplace
+COPY ./testing-task-marketplace/ ./testing-task-marketplace/
 RUN yarn --cwd ./testing-task-marketplace build
 
 # Stage 2: Настройка json-server и production сервера
