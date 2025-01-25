@@ -1,5 +1,5 @@
 import { Image } from 'antd';
-import './card.scss'
+import styles from './card.module.scss'
 import { Advertisment } from '../../types';
 
 const placeholderImage = "https://an-good.ru/assets/snippets/phpthumb/noimage.svg";
@@ -10,18 +10,18 @@ const Card = (props: Advertisment) => {
 
 
     return (
-        <div className="card" key={id}>
-            <div className="card__img">
+        <div className={styles.card} key={id}>
+            <div className={styles.card__img}>
                 <Image
                     src={imageUrl || placeholderImage}
                     alt={name}
                 />
             </div>
-            <div className="card__name">{name}</div>
-            <div className="card__cost">{price}</div>
-            <div className='card__icons'>
-                <div className="card__icons__likes">{likes}</div>
-                <div className="card__icons__views">{views}</div>
+            <div className={styles.card__name}>{name}</div>
+            <div className={styles.card__cost}>{price}</div>
+            <div className={styles.card__icons}>
+                <div className={styles.card__icons__views}>{views}</div>
+                <div className={styles.card__icons__likes}>{likes}</div>
             </div>
         </div>
     )
