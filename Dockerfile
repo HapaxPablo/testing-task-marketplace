@@ -13,23 +13,23 @@ COPY ./marketplace-front ./marketplace-front
 # Собираем приложение
 RUN yarn --cwd ./marketplace-front build
 
-# Stage 2: Настройка json-server и сервера React
+# Stage 2: Настройка json-server и production сервера
 FROM node:20
 
 WORKDIR /app
 
-# Устанавливаем json-server
+# Устанавливаем json-server и serve
 COPY package.json yarn.lock ./
-RUN yarn install
+RUN yarn install && yarn global add serve
 
-# Копируем готовые статические файлы React-приложения из Stage 1
+# Копируем статические файлы React-приложения
 COPY --from=build-stage /app/marketplace-front/dist ./public
 
 # Копируем базу данных
 COPY db.json ./db.json
 
 # Команда для запуска json-server и React-приложения
-CMD ["sh", "-c", "yarn server & npx serve public -l 3000"]
+CMD ["sh", "-c", "yarn server & serve -s public -l 3000"]
 
 # Открываем порты
 EXPOSE 3000 8000
